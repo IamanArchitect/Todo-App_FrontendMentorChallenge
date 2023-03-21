@@ -6,10 +6,11 @@
 
 :root {
     --border-radius: 8px;
+    --bright-blue: hsl(220, 98%, 61%);
     --very-dark-blue: hsl(235, 21%, 11%);
     --very-dark-desaturated-blue: hsl(235, 24%, 19%);
     --light-grayish-blue: hsl(234, 39%, 85%);
-    --light-grayish-blue: hsl(236, 33%, 92%);
+    --light-grayish-blue-hover: hsl(236, 33%, 92%);
     --dark-grayish-blue: hsl(234, 11%, 52%);
     --very-dark-grayish-blue: hsl(233, 14%, 35%);
     --very-dark-grayish-blue: hsl(237, 14%, 26%);
@@ -22,8 +23,13 @@ body {
     font-size: 18px;
     margin: 0;
     background-color: var(--very-dark-blue);
-    background-image: url("images/bg-desktop-dark.jpg");
+    background-image: url("images/bg-mobile-dark.jpg");
+    @include desktop {
+        background-image: url("images/bg-desktop-dark.jpg");
+        
+    }
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main {
@@ -40,6 +46,7 @@ main {
 header {
     display: flex;
     justify-content: space-between;
+    margin-top: 100px;
 }
 
 .header-title {
@@ -67,7 +74,7 @@ header {
     display: flex;
     gap: 15px;
     margin-top: 30px;
-    padding: 15px 20px;
+    padding: 15px 25px;
     background-color: var(--very-dark-desaturated-blue);
     border-radius: var(--border-radius);
 
@@ -102,7 +109,7 @@ header {
 
     &__item {
         display: flex;
-        padding: 15px 20px;
+        padding: 0px 6px;
         border-bottom: 1px solid var(--dark-grayish-blue);
     }
 }
@@ -162,10 +169,9 @@ header {
     }
 
     &__button {
-        grid-column-start: 3;
-        margin-left: 10px;
+        margin-top: 20px;
+        margin-right: 10px;
         position: relative;
-        
     }
 
     &__delete {
@@ -181,7 +187,7 @@ header {
         left: 2.5px;
         width: 16px;
         height: 16px;
-        background-image: url("images_uebung_todo_app_main/icon-cross.svg");
+        background-image: url("images/icon-cross.svg");
         background-color: hsl(235, 24%, 19%);
     }
 
@@ -202,6 +208,48 @@ header {
     content: counter(item);
 }
 
+.counter:hover {
+    color: var(--light-grayish-blue-hover);
+}
+
+.counter:active {
+    color: var(--bright-blue);
+}
+
+.filters {
+
+    &__all:hover {
+    color: var(--light-grayish-blue-hover);
+    }
+
+    &__all:active {
+        color: var(--bright-blue);
+    }
+
+    &__active:hover {
+    color: var(--light-grayish-blue-hover);
+    }
+
+    &__active:active {
+        color: var(--bright-blue);
+    }
+
+    &__completed:hover {
+    color: var(--light-grayish-blue-hover);
+    }
+
+    &__completed:active {
+        color: var(--bright-blue);
+    }
+}
+
+.clear-items:hover {
+    color: var(--light-grayish-blue-hover);
+}
+
+.clear-items:active {
+    color: var(--bright-blue);
+}
 
 footer {
     display: flex;
