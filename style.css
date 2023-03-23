@@ -24,6 +24,7 @@ body {
 main {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: -470px;
   padding: 30px 10px; }
   @media screen and (min-width: 768px) {
     main {
@@ -101,20 +102,19 @@ header {
         padding: 5px;
         position: absolute;
         width: 50%;
-        
-        
     }
-     */ }
+       */ }
   .item__checkbox {
     position: absolute;
     margin-right: 10px;
     opacity: 0; }
   .item__fake-checkbox {
-    background-color: var(--very-dark-grayish-blue);
+    background-color: var(--very-dark-desaturated-blue);
     height: 20px;
     position: relative;
     width: 20px;
     border-radius: 50%;
+    border: 1px solid var(--very-dark-grayish-blue);
     margin: 20px;
     z-index: 1; }
   .item__checkbox:checked + .item__fake-checkbox {
@@ -187,3 +187,11 @@ footer {
   justify-content: center;
   margin-top: 30px;
   color: var(--dark-grayish-blue); }
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+  bottom: -10px; }
+  .attribution__a {
+    color: #3e52a3; }
