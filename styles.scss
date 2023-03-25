@@ -31,7 +31,6 @@ body {
 }
 
 main {
-    
     margin-left: auto;
     margin-right: auto;
     margin-bottom: -470px;
@@ -66,7 +65,6 @@ header {
         width: 100%;
         height: 100%;
     }
-
 }
 
 .form {
@@ -76,7 +74,6 @@ header {
     padding: 15px 25px;
     background-color: var(--very-dark-desaturated-blue);
     border-radius: var(--border-radius);
-
 
     &__checkbox {
         width: 20px;
@@ -122,8 +119,7 @@ header {
     &__checkbox {
         position: absolute;
         margin-right: 10px;
-        opacity: 0; 
-           
+        opacity: 0;   
     }
 
     &__fake-checkbox {
@@ -136,20 +132,7 @@ header {
         margin: 20px;
         z-index: 1;
     }
-/*
-    &__fake-checkbox::before {
-        content: "";
-        background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-        background-size: 20px;
-        border-radius: 50%;
-        height: 50%;
-        left: -0.9px;
-        top: -0.9px;
-        padding: 5px;
-        position: absolute;
-        width: 50%;
-    }
-       */ 
+
     &__checkbox:checked + &__fake-checkbox {
         background-clip: padding-box; 
         background-image: url("images/icon-check.svg"), linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -157,10 +140,8 @@ header {
         background-position: center;
     }
 
-
     &__description {
         flex-grow: 1;
-        margin: 10px;
     }
 
     &__button {
@@ -185,12 +166,7 @@ header {
         background-image: url("images/icon-cross.svg");
         background-color: hsl(235, 24%, 19%);
     }
-
-    .todo-item__delete:checked + .todo-item__fake-button {
-        
-    }
 }
-
 
 .controls {
     display: flex;
@@ -258,7 +234,6 @@ footer {
     text-align: center; 
     position: relative;
     bottom: -10px;
-
 
     &__a { 
         color: hsl(228, 45%, 44%); 

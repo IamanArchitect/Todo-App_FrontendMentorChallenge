@@ -89,21 +89,7 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  color: #e4e5f1;
-  /*
-    &__fake-checkbox::before {
-        content: "";
-        background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-        background-size: 20px;
-        border-radius: 50%;
-        height: 50%;
-        left: -0.9px;
-        top: -0.9px;
-        padding: 5px;
-        position: absolute;
-        width: 50%;
-    }
-       */ }
+  color: #e4e5f1; }
   .item__checkbox {
     position: absolute;
     margin-right: 10px;
@@ -123,8 +109,7 @@ header {
     background-repeat: no-repeat;
     background-position: center; }
   .item__description {
-    flex-grow: 1;
-    margin: 10px; }
+    flex-grow: 1; }
   .item__button {
     margin-top: 20px;
     margin-right: 10px;
