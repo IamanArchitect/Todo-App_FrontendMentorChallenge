@@ -4,17 +4,7 @@
     }
 }
 
-:root {
-    --border-radius: 8px;
-    --bright-blue: hsl(220, 98%, 61%);
-    --very-dark-blue: hsl(235, 21%, 11%);
-    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-    --light-grayish-blue: hsl(234, 39%, 85%);
-    --light-grayish-blue-hover: hsl(236, 33%, 92%);
-    --dark-grayish-blue: hsl(234, 11%, 52%);
-    --very-dark-grayish-blue: hsl(233, 14%, 35%);
-    --very-dark-grayish-blue: hsl(237, 14%, 26%);
-}
+@import "colors.scss";
 
 body {
     font-family: 'Josefin Sans', sans-serif;
@@ -22,12 +12,12 @@ body {
     margin: 0;
     background-color: var(--very-dark-blue);
     background-image: url("images/bg-mobile-dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     
     @include desktop {
         background-image: url("images/bg-desktop-dark.jpg");
     }
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 main {
@@ -71,7 +61,7 @@ header {
     display: flex;
     gap: 15px;
     margin-top: 30px;
-    padding: 15px 25px;
+    padding: 20px 25px;
     background-color: var(--very-dark-desaturated-blue);
     border-radius: var(--border-radius);
 
@@ -89,6 +79,8 @@ header {
         color: var(--dark-grayish-blue);
         font-family: 'Josefin Sans', sans-serif;
         font-size: 18px;
+        caret-color: var(--bright-blue);
+        outline: none;
     }    
 }
 
@@ -105,7 +97,7 @@ header {
     &__item {
         display: flex;
         padding: 0px 6px;
-        border-bottom: 1px solid var(--dark-grayish-blue);
+        border-bottom: 1px solid var(--very-dark-grayish-blue);
     }
 }
 
@@ -114,12 +106,12 @@ header {
     display: flex;
     align-items: center;
     width: 100%;
-    color: hsl(236, 33%, 92%);
+    color: var(--light-grayish-blue-hover);
     
     &__checkbox {
         position: absolute;
         margin-right: 10px;
-        opacity: 0;   
+        opacity: 0; 
     }
 
     &__fake-checkbox {
@@ -131,6 +123,7 @@ header {
         border: 1px solid var(--very-dark-grayish-blue); 
         margin: 20px;
         z-index: 1;
+        cursor: pointer;  
     }
 
     &__checkbox:checked + &__fake-checkbox {
@@ -143,36 +136,32 @@ header {
     &__description {
         flex-grow: 1;
     }
+}    
 
-    &__button {
+.delete-button {
         margin-top: 20px;
-        margin-right: 10px;
+        margin-right: 20px;
         position: relative;
-    }
+        width: 16px;
+        height: 16px;
+        background-image: url("images/icon-cross.svg");
 
     &__delete {
         display: flex;
         justify-content: flex-end;
         grid-column-start: 2; 
         opacity: 0; 
-    }
-
-    &__fake-button {
-        position: absolute;
-        top: 1px;
-        left: 2.5px;
-        width: 16px;
-        height: 16px;
-        background-image: url("images/icon-cross.svg");
-        background-color: hsl(235, 24%, 19%);
+        cursor: pointer;
     }
 }
 
 .controls {
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    justify-content: space-between;
+    margin: 25px;
+    padding-bottom: 20px;
     color: var(--dark-grayish-blue);
+    cursor: pointer;
 }
 
 .counter::before {
@@ -187,32 +176,7 @@ header {
     color: var(--bright-blue);
 }
 
-.filters {
-
-    &__all:hover {
-    color: var(--light-grayish-blue-hover);
-    }
-
-    &__all:active {
-        color: var(--bright-blue);
-    }
-
-    &__active:hover {
-    color: var(--light-grayish-blue-hover);
-    }
-
-    &__active:active {
-        color: var(--bright-blue);
-    }
-
-    &__completed:hover {
-    color: var(--light-grayish-blue-hover);
-    }
-
-    &__completed:active {
-        color: var(--bright-blue);
-    }
-}
+@import "filters";
 
 .clear-items:hover {
     color: var(--light-grayish-blue-hover);
