@@ -12,12 +12,12 @@
   <title>Frontend Mentor | Todo app</title>
 </head>
 
-<body> <!--class="light"--></body>>
+<body class="dark"> <!--class="light"-->
   <main>
     <header>
       <h1 class="header-title">Todo</h1>
       <button class="toggle-button">
-        <img src="images/icon-sun.svg" alt="LightTheme">
+        <img id="theme-image" src="images/icon-sun.svg" alt="LightTheme">
         <!--Toggle Light Theme
         <img src="images/icon-moon.svg" alt="DarkTheme">
         -->
@@ -98,23 +98,26 @@
         </li>
       </ul>
 
+    </div>
+
       <div class="controls">
         <div class="counter">
             <!-- Add dynamic number --> items left
         </div>
 
+        <div class="filters">
+          <span class="filters__all">All</span>
+          <span class="filters__active">Active</span>
+          <span class="filters__completed">Completed</span>
+        </div> 
+
         <div class="clear-items">
           Clear Completed
         </div>
-      </div>  
+        
+      </div>
 
-    </div> 
-
-  <div class="filters">
-    <span class="filters__all">All</span>
-    <span class="filters__active">Active</span>
-    <span class="filters__completed">Completed</span>
-  </div> 
+    </div>
   
   <footer>
      Drag and drop to reorder list
@@ -126,6 +129,30 @@
   </div>
 
   </main>
+
+  <script>
+
+    document.querySelector(".toggle-button").addEventListener("click", function () {
+      var theme = document.querySelector ('body');
+      var image = document.querySelector ('#theme-image');
+
+      theme.classList.toggle('light');
+
+      if (theme.classList.contains('light')) {
+        image.src = 'images/icon-moon.svg';
+        image.alt = 'DarkTheme';
+        
+      } else if (theme.classList.contains('dark')) {
+        image.src = 'images/icon-sun.svg';
+        image.alt = 'LightTheme';
+      }
+    });
+
+
+
+
+
+  </script>
   
 </body>
 </html>
